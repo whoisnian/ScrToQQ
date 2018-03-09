@@ -5,6 +5,7 @@ echo '
   <head>
     <meta charset="utf-8">
     <title>ScrToQQ</title>
+    <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/Styles/nian.css">
   </head>
     
