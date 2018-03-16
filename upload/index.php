@@ -9,14 +9,19 @@ if(isset($_POST["submit"])&&$_POST["submit"] == "delete") {
 
 if(isset($_GET['file'])&&is_file($_GET['file'])) {
     if(isset($_GET['hasjumped'])&&$_GET['hasjumped'] == 1) {
+        $Time = date("Y-m-d　H:i", filemtime($_GET['file']));
         echo '
 <html>
   <head>
     <meta charset="utf-8">
+    <meta itemprop="url" content="http://'.$_SERVER['HTTP_HOST'].'/upload/?hasjumped=1&file='.$_GET['file'].'"/>
+    <meta itemprop="name" content="截图"/>
+    <meta itemprop="image" content="http://'.$_SERVER['HTTP_HOST'].'/pic.php?file='.$_GET['file'].'">
+    <meta name="description" itemprop="description" content="'.$Time.'" />
     <title>ScrToQQ: '.$_GET['file'].'</title>
   </head>
   <body style="margin:0;">
-    <img src="/upload/'.$_GET['file'].'"/>
+    <img src="/upload/'.$_GET['file'].'" style="display:block;margin:auto;max-width:100%;"/>
   </body>
 </html>';
     }
@@ -42,7 +47,7 @@ if(isset($_GET['file'])&&is_file($_GET['file'])) {
     <label><a class="button" >删除</a><input style="display:none" type="submit" name="submit" value="delete"></label>
   </form>';
         echo '
-  <a class="button" href="http://connect.qq.com/widget/shareqq/index.html?summary='.$Time.'&site=ScrToQQ&title=截图&url=http%3A%2F%2F'.urlencode($_SERVER['HTTP_HOST'].'/upload/?hasjumped=1&file='.$_GET['file']).'" target="_blank">分享</a>';
+  <a class="button" href="http://connect.qq.com/widget/shareqq/index.html?summary='.$Time.'&site=ScrToQQ&title=截图&url=http%3A%2F%2F'.urlencode($_SERVER['HTTP_HOST'].'/upload/?hasjumped=1&file='.$_GET['file']).'&pics=http%3A%2F%2F'.urlencode($_SERVER['HTTP_HOST'].'/pic.php?file='.$_GET['file']).'" target="_blank">分享</a>';
         echo '
   <div class="qrcode">
     <span class="button">扫码分享</span>
