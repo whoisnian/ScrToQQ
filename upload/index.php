@@ -49,7 +49,7 @@ if(isset($_GET['file'])&&is_file($_GET['file'])) {
     <label><a class="button" >删除</a><input style="display:none" type="submit" name="submit" value="delete"></label>
   </form>';
         echo '
-  <a class="button" href="http://connect.qq.com/widget/shareqq/index.html?summary='.$Time.'&site=ScrToQQ&title=截图&url=http%3A%2F%2F'.urlencode($_SERVER['HTTP_HOST'].'/upload/?hasjumped=1&file='.$_GET['file']).'&pics=http%3A%2F%2F'.urlencode($_SERVER['HTTP_HOST'].'/pic.php?file='.$_GET['file']).'" target="_blank">分享</a>';
+  <a class="button" href="http://connect.qq.com/widget/shareqq/index.html?summary='.$Time.'&site=ScrToQQ&title=截图&url=http%3A%2F%2F'.urlencode($_SERVER['HTTP_HOST'].'/upload/?hasjumped=1&file='.$_GET['file']).'&pics=http%3A%2F%2F'.urlencode('q1.qlogo.cn/g?b=qq&s=100&nk=763798866').'" target="_blank">分享</a>';
         echo '
   <div class="qrcode">
     <span class="button">扫码分享</span>
