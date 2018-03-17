@@ -21,7 +21,9 @@ if(isset($_GET['file'])&&is_file($_GET['file'])) {
     <title>ScrToQQ: '.$_GET['file'].'</title>
   </head>
   <body style="margin:0;">
-    <img src="/upload/'.$_GET['file'].'" style="display:block;margin:auto;max-width:100%;"/>
+    <div>
+      <img src="/upload/'.$_GET['file'].'" style="display:block;margin:auto;max-width:100%;"/>
+    </div>
   </body>
 </html>';
     }
@@ -34,7 +36,7 @@ if(isset($_GET['file'])&&is_file($_GET['file'])) {
         $imageString = base64_encode(ob_get_contents());
         ob_end_clean();
 
-        $Time = date("Y-m-d　H:i", filemtime($_GET['file']));
+        $Time = date("Y-m-d H:i", filemtime($_GET['file']));
         echo '
 <br/>
 <div style="float:right;">
