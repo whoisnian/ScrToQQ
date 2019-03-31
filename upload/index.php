@@ -2,7 +2,7 @@
 
 if(isset($_POST["submit"])&&$_POST["submit"] == "delete") {
     if(is_file($_POST['name'])) {
-        unlink($_POST['name']);
+        unlink(basename($_POST['name']));
     }
     echo '<meta http-equiv="refresh" content="0;url=index.php">';
 }
